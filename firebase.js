@@ -12,9 +12,10 @@
   firebase.initializeApp(config);
 
   const statusRef = firebase.database().ref('status_pakan');
-  const distanceRef = firebase.database().ref('manual_distance');
+  const distanceRef = firebase.database().ref('Ketinggian_manual');
   const suhuRef = firebase.database().ref('suhu');
   const kelembabanRef = firebase.database().ref('kelembaban');
+  const pakanRef = firebase.database().ref('Banyak_Pakan')
 
 
   function setManualDistance() {
@@ -78,4 +79,18 @@
     updateKelembaban();
   });
 
+
+  function updatePakan() {
+    pakanRef.once('value').then(function(snapshot) {
+      var pakan = snapshot.val();
+      document.getElementById('pakan').innerText = pakan;
+    });
+  }
+
+  updatePakan();
+
+
+  pakanRef.on('value', function(snapshot) {
+    updatePakan();
+  });
 
