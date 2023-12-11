@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fonts/FLOWRISE.ttf" />
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-database-compat.js"></script>
+    <link rel="js" href="firebase.js">
+    <title>Smart Bird Feeder</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container1">
+        <div class="image">
+          <img src="assets/burung.png" />
+        </div>
+        <div class="text-content">
+          <h1>Smart Bird <br> Feeder</h1>
+          <p>
+            <strong>"SmartBirdFeeder"</strong> adalah proyek pemberi pakan burung otomatis yang terkoneksi dengan <br> web server. 
+            Melalui antarmuka web, pemilik burung dapat mengatur jadwal pemberian pakan, <br>memonitor tinggi pakan, 
+            dan menerimanotifikasi untuk pengisian ulang. Solusi ini memberikan <br> kenyamanan pengendalian dari jarak jauh, 
+            memungkinkanpengguna untuk merawat burung <br>peliharaan dengan lebih efisien dan terhubung.
+          </p>
+          <h2>
+            Muhammad <strong>Iqbal </strong> E32222436<br>
+            <strong>Syahmi</strong> Naufal Saputra E32222388
+          </h2>
+          
+        </div>
+      </div>
+      <div class="container2">
+        <div class="row">
+          <div class="column">
+            <p>Suhu</p>
+            <p class="suhu" id="suhu">Loading...</p>
+          </div>
+
+          <div class="column">
+            <p>Kelembaban</p>
+            <p class="kelembaban" id="kelembaban">Loading...</p>
+          </div>
+
+          <div class="column" id="distance">
+            <p>Ketinggian <strong>Pakan</strong></p>
+            <div class="row2">
+              <input type="number" id="manualDistance"/>
+              <button class="custom-button" onclick="setManualDistance()">Atur</button>
+            </div>
+
+          </div>
+
+          <div class="column" >
+            <p>Status <strong>Pakan</strong></p>
+            <p class="pakan" id="ons">0 Ons</p>
+            <p class="pakan1" id="status">Loading...</p>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <script src="firebase.js"></script>
+  </body>
+</html>
