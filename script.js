@@ -83,7 +83,7 @@
   function updatePakan() {
     pakanRef.once('value').then(function(snapshot) {
       var pakan = snapshot.val();
-      document.getElementById('pakan').innerText = pakan;
+      document.getElementById('pakan').innerText = pakan + ' cm';
     });
   }
 
